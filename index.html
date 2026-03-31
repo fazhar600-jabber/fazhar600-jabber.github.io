@@ -15,6 +15,18 @@
 
     </ul>
 </nav>
+    <div class="lang-dropdown">
+    <button class="lang-btn" onclick="toggleLang()">
+        🌐 LANGUAGE ▾
+    </button>
+
+    <ul id="langMenu" class="lang-menu">
+        <li onclick="changeLanguage('index.html')">English</li>
+        <li onclick="changeLanguage('id.html')">Bahasa Indonesia</li>
+        <li onclick="changeLanguage('jp.html')">日本語</li>
+    </ul>
+</div>
+
 <header>
         <img src="profile.jpeg" alt="Profile Photo" class="profile-img">
     <h1>Faris Azhar</h1>
@@ -146,5 +158,21 @@
 
 
 </body>
-</html>
+<script>
+function toggleLang(){
+    const menu = document.getElementById("langMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
 
+function changeLanguage(page){
+    window.location.href = page;
+}
+
+// klik luar = nutup dropdown
+window.onclick = function(e){
+    if(!e.target.matches('.lang-btn')){
+        document.getElementById("langMenu").style.display = "none";
+    }
+}
+</script>
+</html>
